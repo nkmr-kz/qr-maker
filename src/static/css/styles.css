@@ -1,0 +1,17 @@
+.selectBox {
+  margin: 0px 5px;
+}
+
+.inputText {
+  margin: 0px 5px;
+}
+
+.submitButton {
+  margin: 10px 0px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+	background-color: #5c87a6;
+  border: 1px solid #5c87a6;
+  border-radius: 5px;
+}

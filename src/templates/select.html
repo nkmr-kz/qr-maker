@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>qr maker</title>
+  <link href="{{ url_for('static', path='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+  <a href="/input">input</a>
+  <form action="/qr" method="post" accept-charset="UTF-8" maxlength="13">
+    <div>
+      Column1:<input name="product_id" class="inputText" required/>
+    </div>
+    <div>Column2: ""</div>
+    <div>Column3: ""</div>
+    <div>
+      Column4:<select name="l_type" class="selectBox">
+      {% for key in selection.l_type_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+      Column5:<select name="s_type" class="selectBox">
+      {% for key in selection.s_type_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+      </select>
+    </div>
+    <div>
+    Column6:<select name="free_format" class="selectBox">
+      {% for key in selection.free_format_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+      Column7:<select name="length" class="selectBox">
+      {% for key in selection.length_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+      Column8:<select name="diameter" class="selectBox">
+      {% for key in selection.diameter_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+      Column9:<select name="upper_fittings_type" class="selectBox">
+      {% for key in selection.fittings_type_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+      Column10:<select name="lower_fittings_type" class="selectBox">
+      {% for key in selection.fittings_type_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <div>
+    delimiter:<select name="delimiter_str" class="selectBox">
+      {% for key in selection.delimiter_list %}
+      <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    </div>
+    <input type="hidden" name="uuid" value="{{ uuid }}" />
+    <input type="submit" value="Create QR Code" class="submitButton"></input>
+  </form>
+  {% if qr_str %}
+  {{ qr_str }}
+  <br>
+  <img src="{{ url_for('static', path='qr/'+file_name+'.png') }}">
+  {% endif %}
+</body>
+</html>

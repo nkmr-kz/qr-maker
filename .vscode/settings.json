@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "amplify/.config": true,
+    "amplify/**/*-parameters.json": true,
+    "amplify/**/amplify.state": true,
+    "amplify/**/transform.conf.json": true,
+    "amplify/#current-cloud-backend": true,
+    "amplify/backend/amplify-meta.json": true,
+    "amplify/backend/awscloudformation": true
+  },
+  "terminal.integrated.env.windows": {
+    "PSExecutionPolicyPreference": "RemoteSigned"
+  },
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.mypyEnabled": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.formatOnSave": true
+  }
+}
